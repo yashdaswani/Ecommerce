@@ -12,7 +12,7 @@ const sendEmailLink = async (req, res) => {
     try {
       const secretKey = findUser._id + process.env.JWT_SECRET;
       const token = jwt.sign({ userID: findUser._id }, secretKey, { expiresIn: '5m' });
-      const link = `https://ecommerce-0gim.onrender.com/user/reset/${findUser._id}/${token}`;
+      const link = `https://ecommerce-yash.netlify.app/user/reset/${findUser._id}/${token}`;
 
       const transport = nodemailer.createTransport({
         service: "gmail",
